@@ -9,6 +9,7 @@
 #include <unistd.h>
 
 #define BUFFER_MAX_SIZE 1024
+#define RESPONSE_MAX_SIZE 1024*2
 #define RES200 "HTTP/1.1 200 OK\r\n"
 #define RES404 "HTTP/1.1 404 Not Found\r\n\r\n"
 
@@ -84,7 +85,7 @@ void handle_request(int client_fd)
     }
 
     Request req;
-    char response[BUFFER_MAX_SIZE];
+    char response[RESPONSE_MAX_SIZE];
 
     printf("Buffer-------------------------\n %s\n", buffer);
 
